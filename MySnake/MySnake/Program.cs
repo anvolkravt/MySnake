@@ -10,19 +10,19 @@ namespace MySnake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
+            Console.SetBufferSize(80, 25);
 
-            p1.Draw();
+            HorizontalLine topLine = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine bottomLine = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine leftLine = new VerticalLine(0, 0, 24, '+');
+            VerticalLine rightLine = new VerticalLine(78, 0, 24, '+');
+            topLine.Draw();
+            bottomLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
 
-            Point p2 = new Point(4, 5, '#');
-
-            p2.Draw();
-
-            HorizontalLine LineG = new HorizontalLine(5, 10, 8, '+');
-            LineG.Draw();
-
-            VerticalLine LineV = new VerticalLine(2, 7, 11, '@');
-            LineV.Draw();
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
             Console.ReadLine();
  
