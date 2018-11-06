@@ -18,27 +18,14 @@ namespace MySnake
 
             p2.Draw();
 
-            List<int> numList = new List<int>();
-            numList.Add(0);
-            numList.Add(1);
-            numList.Add(2);
+            HorizontalLine LineG = new HorizontalLine(5, 10, 8, '+');
+            LineG.Draw();
 
-            int x = numList[ 0 ];
-            int y = numList[ 1 ];
-            int z = numList[ 2 ];
+            VerticalLine LineV = new VerticalLine(2, 7, 11, '@');
+            LineV.Draw();
 
-            foreach(int i in numList)
-            {
-                Console.WriteLine(i);
-            }
-
-            numList.RemoveAt(0);
-
-            List<Point> pList = new List<Point>();
-            pList.Add(p1);
-            pList.Add(p2);
-
-            Console.ReadLine();       
+            Console.ReadLine();
+ 
         }
 
       
