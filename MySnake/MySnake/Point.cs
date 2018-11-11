@@ -54,6 +54,11 @@ namespace MySnake
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
 
     }
 }
