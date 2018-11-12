@@ -15,11 +15,12 @@ namespace MySnake
         public Point()
         {
         }
-        public Point(int _x, int _y, char _sym)
+
+        public Point ( int x, int y, char sym)
         {
-            x = _x;
-            y = _y;
-            sym = _sym;
+            this.x = x;
+            this.y = y;
+            this.sym = sym;
         }
 
         public Point(Point p)
@@ -49,6 +50,11 @@ namespace MySnake
             }
         }
 
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
@@ -58,6 +64,11 @@ namespace MySnake
         {
             sym = ' ';
             Draw();
+        }
+
+        public override string ToString()
+        {
+            return x + ", " + y + ", " + sym;
         }
 
     }

@@ -21,6 +21,7 @@ namespace MySnake
                 pList.Add(p);
             }
         }
+
         internal void Move()
         {
             Point tail = pList.First();
@@ -31,6 +32,7 @@ namespace MySnake
             tail.Clear();
             head.Draw();
         }
+
         public Point GetNextPoint()
         {
             Point head = pList.Last();
@@ -38,6 +40,7 @@ namespace MySnake
             NextPoint.Move(1, direction);
             return NextPoint;
         }
+
         public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)
@@ -48,6 +51,20 @@ namespace MySnake
                 direction = Direction.DOWN;
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
+        }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit( food ) )
+            {
+                food.sym = head.sym;
+                pList.Add( food );
+                return true;
+            }
+            else
+                return false;
+            
         }
     }
 }
